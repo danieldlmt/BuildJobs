@@ -1,0 +1,5 @@
+"0","  jobduration_java_test <- builds_short_java %>% select(as.numeric(tr_num_jobs), tr_duration, x_tr_sloc)
+"
+"2","Error in overscope_eval_next(overscope, expr) : 
+  object 'tr_num_jobs' not found
+"

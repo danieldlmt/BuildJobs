@@ -1,0 +1,57 @@
+Column Name;Description;Unit;Example
+row;Unique identi?er for a build job in TravisTorrent;Integer ;1543966
+git_commit;SHA1 Hash of the commit which triggered this build (should be unique world-wide) ;String;c1d9c11cbe3d20f2...
+git_merged_with;If this commit sits on a Pull Request (gh_is_pr true), the SHA1 of the commit that merged said pull request ;String;
+git_branch;Branch git_commit was committed on ;String ;4-1-stable
+git_commits;All commits included in the push that triggered the build, minus the built commit List of ;Strings ;87a2f02199d21a2aa...
+git_num_commits;The number of commits in git_commits, to ease ef?cient splitting ;String ;1
+git_num_committers;Number of people who committed to this project ;Integer ;1
+gh_project_name;Project name on GitHub (in format user/repository) ;String ;rails/rails
+gh_is_pr;Whether this build was triggered as part of a pull request on GitHub ;Boolean ;false
+gh_lang;Dominant repository language, according to GitHub ;String ;ruby
+gh_first_commit_created_at;Timestamp of ?rst commit in the push that triggered the build ;ISO Date (UTC+1) ;18/04/2014 20:12
+gh_team_size;Size of the team contributing to this project within 3 months of last commit ;Integer ;168
+gh_num_issue_comments;If git_commit is linked to a PR on GitHub, the number of comments on that PR ;Integer;0
+gh_num_commit_comments;The number of comments on git_commits on GitHub ;Integer ;0
+gh_num_pr_comments;If gh_is_pr is true, the number of comments on this pull request on GitHub ;Integer ;0
+gh_src_churn;How much (lines) production code changed by the new commits in this build ;Integer;4
+gh_test_churn;How much (lines) test code changed by the new commits in this build;Integer;8
+gh_files_added;Number of ?les added by the new commits in this build ;Integer ;0
+gh_files_deleted;Number of ?les deleted by the new commits in this build ;Integer ;0
+gh_files_modified;Number of ?les modi?ed by the new commits in this build ;Integer ;3
+gh_tests_added;Lines of testing code added by the new commits in this build ;Integer;0
+gh_tests_deleted;Lines of testing code deleted by the new commits in this build ;Integer;0
+gh_src_files;Number of production ?les in the new commits in this build ;Integer;
+gh_doc_files;Number of documentation ?les in the new commits in this build ;Integer;
+gh_other_files;Number of remaining ?les which are neither production code nor documentation in the new commits in this build;Integer;
+gh_commits_on_files_touched;Number of unique commits on the ?les included in this build within 3 months of last commit ;93;
+gh_sloc;Number of executable production source lines of code, in the entire repository ;Integer ;53421
+gh_test_lines_per_kloc;Test density. Number of lines in test cases per 1,000 gh_sloc ;Double ;2.191.011
+gh_test_cases_per_kloc;Test density. Number of test cases per 1,000 gh_sloc ;Double ;1.883.342
+gh_asserts_cases_per_kloc;Assert density. Number of assertions per 1,000 gh_sloc ;Double;5.350.143
+gh_by_core_team_member;Whether this commit was authored by a core team member;Boolean;true
+gh_description_complexity;If gh_is_pr is true, the total number of words in the pull request title and description;Integer;
+gh_pull_req_num;Pull request number on GitHub;Integer;
+tr_build_id;Unique build ID on Travis ;String ;23298954
+tr_status;Build status (pass, fail, errored, canceled) ;String ;passed
+tr_duration;Overall duration of the build ;Integer (in seconds);23389
+tr_started_at;Start of the build process ;ISO Date (UTC) ;18/04/2014 19:12
+tr_jobs;Which Travis jobs executed this build (number of integration environments) ;List of Strings ;[23298955, ...]
+tr_build_number;Build number in the project ;Integer ;15459
+tr_job_id;This build job?s id, one of tr_jobs ;String ;23298981
+tr_lan;Language of the build, as recognized by BUILDLOGANALYZER ;String ;ruby
+tr_setup_time;Setup time for the Travis build to start ;Integer (in seconds);0
+tr_analyzer;Build log analyzer that took over (ruby, java-ant, java-maven,java-gradle) ;String ;ruby
+tr_frameworks;Test frameworks that tr_analyzer recognizes and invokes (junit, rspec, cucumber, ...) ;List of Strings; testunit
+tr_tests_ok;If available (depends on tr_frameworks and tr_analyzer): Number of tests passed ;Integer;310
+tr_tests_fail;If available (depends on tr_frameworks and tr_analyzer): Number of tests failed;Integer;1
+tr_tests_run;If available (depends on tr_frameworks and tr_analyzer): Number of tests were run as part of this build ;Integer;311
+tr_tests_skipped;If available (depends on tr_frameworks and tr_analyzer): Number of tests were skipped or ignored in the build Integer;;
+tr_failed_tests;All tests that failed in this build ;List of strings ;SerializedAttributeTest
+tr_testduration;Time it took to run the tests ;Double (in seconds) ;28.2
+tr_purebuildduration;Time it took to run the build (without Travis scheduling and provisioning the build) ;Double (in seconds);
+tr_tests_ran;Whether tests ran in this build ;Boolean ;true
+tr_tests_failed;Whether tests failed in this build ;Boolean ;true
+tr_num_jobs;How many jobs does this build have (length of tr_jobs) ;Integer ;30
+tr_prev_build;Serialized link to the previous build, by giving its tr_build_id;String;39557888
+tr_ci_latency;Latency induced by Travis (scheduling, build pick-up, ...);Integer (in seconds);1408
